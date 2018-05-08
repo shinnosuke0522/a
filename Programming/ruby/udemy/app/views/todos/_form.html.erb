@@ -1,0 +1,31 @@
+<%= form_with(model: todo, local: true) do |form| %>
+  <%= render 'shared/errors', object: @todo %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div class="field">
+    <%= form.label :priority %>
+    <%= form.number_field :priority %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category %>
+    <% @categories = Category.all %>
+    <%= 
+      form.collection_select :category_id, Category.all, :id, :name,
+      include_blank: true
+    %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

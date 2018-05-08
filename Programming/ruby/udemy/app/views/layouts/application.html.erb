@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Udemy</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <h1><%=link_to '俺のTODOリスト', root_path %></h1>
+    <div id = "wrapper">
+      <header>
+        <%= link_to 'TODO一覧', root_path %>
+        <%= link_to 'カテゴリ一覧', categories_path %>
+        <%= link_to '新しいTodo', new_todo_path %>
+        <%= link_to '新しいカテゴリ', new_category_path %>
+        
+      </header>
+      <%= yield %>
+    </div>
+  </body>
+</html>
