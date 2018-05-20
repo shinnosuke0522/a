@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @room.title %>
+</p>
+<p>
+	<strong>Room id:</strong>
+	<%= @room.id %>
+</p>
+
+<div id="messages", data-room_id="<%= @room.id %>">
+	<!--<% @messages.each do |message| %>
+		<div><%= message.body %></div>
+	<% end %> -->
+  <%= render @messages %>
+</div>
+<br/>
+
+<form>
+  <label>
+    発言する: <input type="text" data-behavior="room_speaker">
+  </label>
+</form>
+
+<p>
+<%= link_to 'Edit', edit_room_path(@room) %> |
+<%= link_to 'Back', rooms_path %>
+</p>
