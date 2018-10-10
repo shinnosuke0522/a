@@ -1,0 +1,1 @@
+This is the Repository for The Mini Project for Object Oriented Development 1. The group members for this project are Atanas Marchev, Marc Owen Dane,  Shinnosuke Hirota and Denis Bogdanov.
